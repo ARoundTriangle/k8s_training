@@ -6,7 +6,7 @@ metadata:
     app: ui
     tier: frontend
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       tier: frontend
@@ -14,20 +14,20 @@ spec:
     metadata:
       labels:
         tier: frontend
-spec:
-  containers:
-  - image:  supergiantkir/animals:bear
-    name: test-container
-    volumeMounts:
-    - mountPath: /storage
-      name: app-storage
-  - image:  yanivomc/spring-music:latest
-    name: test-container1
-    volumeMounts:
-    - mountPath: /storage
-      name: app-storage
-  volumes:
-  - name:  app-storage
-    hostPath:
-      path: /tmp/files
-      type: DirectoryOrCreate
+  spec:
+    containers:
+    - image:  supergiantkir/animals:bear
+      name: test-container
+      volumeMounts:
+      - mountPath: /storage
+        name: app-storage
+    - image:  yanivomc/spring-music:latest
+      name: test-container1
+      volumeMounts:
+      - mountPath: /storage
+        name: app-storage
+    volumes:
+    - name:  app-storage
+      hostPath:
+        path: /tmp/files
+        type: DirectoryOrCreate
