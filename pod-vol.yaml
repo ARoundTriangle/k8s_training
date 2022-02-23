@@ -7,12 +7,12 @@ spec:
   - image:  supergiantkir/animals:bear
     name: test-container
     volumeMounts:
-    - mountPath: /storage
+    - mountPath: /app/data
       name: app-storage
   - image:  yanivomc/spring-music:latest
     name: test-container1
     volumeMounts:
-    - mountPath: /storage
+    - mountPath: /app/data
       name: app-storage
   volumes:
   - name:  app-storage
