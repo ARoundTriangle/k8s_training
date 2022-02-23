@@ -7,17 +7,15 @@ spec:
   - image:  supergiantkir/animals:bear
     name: test-container
     volumeMounts:
-    - mountPath: /app/data
+    - mountPath: /storage
       name: app-storage
   - image:  yanivomc/spring-music:latest
     name: test-container1
     volumeMounts:
-    - mountPath: /app/data
+    - mountPath: /storage
       name: app-storage
   volumes:
   - name:  app-storage
     hostPath:
-      # directory location on host
       path: /tmp/files
-      # this field is optional
-      type: Directory
+      type: DirectoryOrCreate
