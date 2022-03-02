@@ -10,5 +10,5 @@ spec:
     protocol: TCP
     port: 443
     targetPort: 8080
-  clusterIP: 172.31.6.112
+  clusterIP: 100.64.0.11
   type: LoadBalancer
