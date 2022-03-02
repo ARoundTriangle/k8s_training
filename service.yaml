@@ -12,3 +12,7 @@ spec:
     targetPort: 8080
   clusterIP: 100.64.0.11
   type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - ip: 192.0.2.126  
