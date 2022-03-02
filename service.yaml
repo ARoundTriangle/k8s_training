@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: test-service
+spec:
+  selector:
+    app: service
+  ports:
+  - name: https
+    protocol: TCP
+    port: 443
+    targetPort: 8080
+  clusterIP: 172.31.6.112
+  type: LoadBalancer
